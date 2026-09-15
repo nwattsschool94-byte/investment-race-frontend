@@ -1,0 +1,75 @@
+<section class="auth-page">
+  <div class="auth-card">
+    <div class="auth-copy">
+      <p class="eyebrow">LEVEL UP LIFE MOVEMENT</p>
+      <h1>Create your account</h1>
+      <p>
+        Join the movement and get access to programs, resources,
+        mentorship, and financial literacy content.
+      </p>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input
+          id="firstName"
+          type="text"
+          formControlName="firstName"
+          placeholder="Enter your first name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input
+          id="lastName"
+          type="text"
+          formControlName="lastName"
+          placeholder="Enter your last name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Create a password"
+        />
+      </div>
+
+    <button
+    type="submit"
+    class="submit-btn"
+    [disabled]="isSubmitting"
+    >
+    {{ isSubmitting ? 'Creating Account...' : 'Create Account' }}
+    </button>
+    
+    <p class="success-message" *ngIf="message">
+  {{ message }}
+    </p>
+
+    <p class="error-message" *ngIf="errorMessage">
+  {{ errorMessage }}
+    </p>
+    </form>
+
+    <p class="login-link">
+      Already have an account?
+      <a routerLink="/login">Log in</a>
+    </p>
+  </div>
+</section>
