@@ -1,0 +1,173 @@
+<div class="youth-profile">
+
+  <a
+    routerLink="/dashboard"
+    class="back-link">
+    ← Back to Dashboard
+  </a>
+
+
+  <p *ngIf="isLoading">
+    Loading participant...
+  </p>
+
+
+  <div *ngIf="youth">
+
+    <header class="profile-header">
+
+      <div class="profile-avatar">
+        {{ youth.firstName.charAt(0) }}
+      </div>
+
+      <div>
+
+        <p class="eyebrow">
+          PARTICIPANT PROFILE
+        </p>
+
+        <h1>
+          {{ youth.firstName }}
+          {{ youth.lastName }}
+        </h1>
+
+        <p>Level Up Program Participant</p>
+
+      </div>
+
+    </header>
+
+
+    <nav class="profile-tabs">
+
+      <button class="active">
+        Overview
+      </button>
+
+      <button>
+        Notes
+      </button>
+
+      <button>
+        Curriculum
+      </button>
+
+      <button>
+        Investment Game
+      </button>
+
+    </nav>
+
+
+    <section class="profile-section">
+
+      <h2>Participant Overview</h2>
+
+      <div class="info-card">
+
+        <div>
+          <span>First Name</span>
+          <strong>
+            {{ youth.firstName }}
+          </strong>
+        </div>
+
+        <div>
+          <span>Last Name</span>
+          <strong>
+            {{ youth.lastName }}
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="profile-section">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">
+            CASE NOTES
+          </p>
+
+          <h2>Youth Notes</h2>
+        </div>
+
+      </div>
+
+
+      <form
+        class="note-form"
+        (ngSubmit)="addNote()">
+
+        <label for="newNote">
+          Add a Note
+        </label>
+
+        <textarea
+          id="newNote"
+          name="newNote"
+          [(ngModel)]="newNote"
+          rows="5"
+          placeholder="Record participant progress, observations, or follow-up information...">
+        </textarea>
+
+        <button
+          type="submit"
+          [disabled]="isSavingNote">
+
+          {{
+            isSavingNote
+              ? 'Saving...'
+              : 'Save Note'
+          }}
+
+        </button>
+
+      </form>
+
+
+      <p *ngIf="message">
+        {{ message }}
+      </p>
+
+
+      <div
+        class="empty-notes"
+        *ngIf="notes.length === 0">
+
+        No notes have been recorded yet.
+
+      </div>
+
+
+      <article
+        class="note-card"
+        *ngFor="let note of notes">
+
+        <div class="note-header">
+
+          <strong>
+            {{ note.createdBy }}
+          </strong>
+
+          <span>
+            {{ note.createdAt | date:'medium' }}
+          </span>
+
+        </div>
+
+        <p>
+          {{ note.note }}
+        </p>
+
+      </article>
+
+    </section>
+
+  </div>
+
+</div>

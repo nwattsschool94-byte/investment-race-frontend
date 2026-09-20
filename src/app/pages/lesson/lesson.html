@@ -1,0 +1,91 @@
+<div class="lesson-page" *ngIf="lesson">
+
+  <a
+    routerLink="/curriculum"
+    class="back-link">
+    ← Back to Curriculum
+  </a>
+
+
+  <header class="lesson-header">
+
+    <p class="eyebrow">
+      LEVEL UP FINANCIAL LITERACY
+    </p>
+
+    <p class="class-number">
+      CLASS {{ lesson.number }}
+    </p>
+
+    <h1>
+      {{ lesson.title }}
+    </h1>
+
+    <p class="theme">
+      {{ lesson.theme }}
+    </p>
+
+  </header>
+
+
+  <section class="core-message">
+
+    <p class="eyebrow dark">
+      CORE MESSAGE
+    </p>
+
+    <p>
+      {{ lesson.coreMessage }}
+    </p>
+
+  </section>
+
+
+  <main class="lesson-content">
+
+    <section
+      class="lesson-section"
+      *ngFor="let section of lesson.sections">
+
+      <h2>
+        {{ section.title }}
+      </h2>
+
+      <p
+        *ngFor="let paragraph of section.content">
+
+        {{ paragraph }}
+
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer class="lesson-footer">
+
+    <a
+      routerLink="/curriculum"
+      class="secondary-button">
+
+      ← Curriculum
+
+    </a>
+
+  </footer>
+
+</div>
+
+
+<div
+  class="lesson-not-found"
+  *ngIf="!lesson">
+
+  <h1>Lesson Not Found</h1>
+
+  <a routerLink="/curriculum">
+    Return to Curriculum
+  </a>
+
+</div>

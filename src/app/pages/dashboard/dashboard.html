@@ -1,1 +1,369 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+    <a routerLink="/" class="brand">
+      <div class="brand-mark">LU</div>
+
+      <div>
+        <strong>Level Up</strong>
+        <span>Life Movement</span>
+      </div>
+    </a>
+
+    <nav>
+      <a class="active">Dashboard</a>
+      <a>My Youth</a>
+      <a routerLink="/curriculum">
+  Curriculum
+</a>
+      <a>Notes</a>
+      <a>Resources</a>
+    </nav>
+
+    <button class="logout" (click)="logout()">
+      Log Out
+    </button>
+
+  </aside>
+
+
+  <main class="content">
+
+    <header class="topbar">
+
+      <div>
+        <p class="eyebrow">SOCIAL WORKER PORTAL</p>
+        <h1>Dashboard</h1>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">
+          {{ firstName.charAt(0) }}
+        </div>
+
+        <div>
+          <strong>{{ fullName }}</strong>
+          <span>Social Worker</span>
+        </div>
+      </div>
+
+    </header>
+
+
+    <section class="welcome">
+
+      <div>
+        <p class="eyebrow light">WELCOME BACK</p>
+
+        <h2>
+          Good to see you,
+          <span>{{ firstName }}.</span>
+        </h2>
+
+        <p>
+          Manage participants, access curriculum,
+          and keep track of your program activity.
+        </p>
+      </div>
+
+<button
+  class="add-button"
+  (click)="openAddYouth()">
+  + Add Youth
+</button>
+
+    </section>
+
+    <section
+  class="add-youth-panel"
+  *ngIf="showAddYouth">
+
+  <div class="section-header">
+
+    <div>
+      <p class="eyebrow dark">NEW PARTICIPANT</p>
+      <h2>Add Youth</h2>
+    </div>
+
+    <button
+      type="button"
+      class="secondary-button"
+      (click)="closeAddYouth()">
+      Cancel
+    </button>
+
+  </div>
+
+  <div class="search-youth">
+
+  <h3>Find Existing Youth</h3>
+
+  <p>
+    Search before creating a new participant
+    to avoid duplicate records.
+  </p>
+
+  <div class="search-row">
+
+    <input
+      type="text"
+      [(ngModel)]="searchName"
+      placeholder="Search by name">
+
+    <button
+      type="button"
+      class="secondary-button"
+      (click)="searchYouth()"
+      [disabled]="isSearching">
+
+      {{ isSearching ? 'Searching...' : 'Search' }}
+
+    </button>
+
+  </div>
+
+
+  <div
+    class="search-results"
+    *ngIf="searchResults.length > 0">
+
+    <article
+      class="search-result"
+      *ngFor="let youth of searchResults">
+
+      <div>
+        <strong>
+          {{ youth.firstName }}
+          {{ youth.lastName }}
+        </strong>
+
+        <p>Existing participant</p>
+      </div>
+
+      <button
+        type="button"
+        class="dark-button"
+        (click)="addExistingYouth(youth)">
+        Add to My List
+      </button>
+
+    </article>
+
+  </div>
+
+  <p *ngIf="searchMessage">
+    {{ searchMessage }}
+  </p>
+
+</div>
+
+<hr>
+
+<h3>Create New Youth</h3>
+
+<p>
+  Can't find the participant?
+  Create a new record.
+</p>
+
+  <form (ngSubmit)="addYouth()">
+
+    <div class="form-group">
+      <label for="firstName">
+        First Name
+      </label>
+
+      <input
+        id="firstName"
+        name="firstName"
+        type="text"
+        [(ngModel)]="newYouth.firstName"
+        placeholder="First name">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">
+        Last Name
+      </label>
+
+      <input
+        id="lastName"
+        name="lastName"
+        type="text"
+        [(ngModel)]="newYouth.lastName"
+        placeholder="Last name">
+    </div>
+
+    <p *ngIf="addYouthMessage">
+      {{ addYouthMessage }}
+    </p>
+
+    <button
+      type="submit"
+      class="dark-button"
+      [disabled]="isAddingYouth">
+
+      {{ isAddingYouth ? 'Adding...' : 'Add Youth' }}
+
+    </button>
+
+  </form>
+
+</section>
+
+
+    <section class="stats">
+
+<article class="stat-card">
+  <span>Total Youth</span>
+  <strong>{{ youths.length }}</strong>
+  <p>Participants assigned to you</p>
+</article>
+
+      <article class="stat-card">
+        <span>Recent Notes</span>
+        <strong>0</strong>
+        <p>Notes recorded this week</p>
+      </article>
+
+      <article class="stat-card">
+        <span>Programs</span>
+        <strong>1</strong>
+        <p>Active curriculum</p>
+      </article>
+
+    </section>
+
+
+    <section class="youth-section">
+
+      <div class="section-header">
+
+        <div>
+          <p class="eyebrow dark">PARTICIPANTS</p>
+          <h2>Your Youth</h2>
+        </div>
+
+        <button class="secondary-button">
+          View All
+        </button>
+
+      </div>
+
+
+<div
+  class="empty-state"
+  *ngIf="!isLoadingYouth && youths.length === 0"
+>
+
+  <div class="empty-icon">+</div>
+
+  <h3>No youth added yet</h3>
+
+  <p>
+    Add your first participant to begin
+    tracking their progress.
+  </p>
+
+<button
+  class="dark-button"
+  (click)="openAddYouth()">
+  Add Youth
+</button>
+
+</div>
+
+
+<div
+  class="youth-list"
+  *ngIf="!isLoadingYouth && youths.length > 0"
+>
+
+<article
+  class="youth-card"
+  *ngFor="let youth of youths"
+  [routerLink]="['/youth', youth.id]">
+
+    <div class="avatar">
+      {{ youth.firstName.charAt(0) }}
+    </div>
+
+    <div>
+      <strong>
+        {{ youth.firstName }}
+        {{ youth.lastName }}
+      </strong>
+
+      <p>Program Participant</p>
+    </div>
+
+  </article>
+
+</div>
+
+    </section>
+
+
+    <section class="quick-section">
+
+      <div class="section-header">
+        <div>
+          <p class="eyebrow dark">TOOLS</p>
+          <h2>Quick Access</h2>
+        </div>
+      </div>
+
+
+      <div class="quick-grid">
+
+        <article class="quick-card">
+          <div class="quick-icon">01</div>
+
+          <h3>Curriculum</h3>
+
+          <p>
+            Access financial literacy lessons
+            and program materials.
+          </p>
+
+          <span><a routerLink="/curriculum">
+  Open Curriculum →
+</a></span>
+        </article>
+
+
+        <article class="quick-card">
+          <div class="quick-icon">02</div>
+
+          <h3>Youth Notes</h3>
+
+          <p>
+            Record and review participant
+            progress and observations.
+          </p>
+
+          <span>View Notes →</span>
+        </article>
+
+
+        <article class="quick-card">
+          <div class="quick-icon">03</div>
+
+          <h3>Resources</h3>
+
+          <p>
+            View tools and materials available
+            to your program.
+          </p>
+
+          <span>View Resources →</span>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

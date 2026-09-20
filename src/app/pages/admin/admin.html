@@ -1,0 +1,43 @@
+<div class="admin-page">
+
+  <h1>Social Worker Approvals</h1>
+
+  <p>
+    Review new accounts before giving them access to the
+    Level Up dashboard.
+  </p>
+
+  <p *ngIf="message">
+    {{ message }}
+  </p>
+
+  <p *ngIf="isLoading">
+    Loading pending accounts...
+  </p>
+
+  <div
+    *ngIf="!isLoading && pendingUsers.length === 0">
+    No accounts are currently waiting for approval.
+  </div>
+
+  <div
+    class="pending-user"
+    *ngFor="let user of pendingUsers">
+
+    <div>
+      <strong>
+        {{ user.firstName }} {{ user.lastName }}
+      </strong>
+
+      <p>{{ user.email }}</p>
+    </div>
+
+    <button
+      type="button"
+      (click)="approveUser(user)">
+      Approve Social Worker
+    </button>
+
+  </div>
+
+</div>

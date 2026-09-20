@@ -42,7 +42,7 @@ export class Signup {
 
     this.http
       .post<any>(
-        'http://localhost:5031/api/auth/register',
+        '/api/auth/register',
         this.signupForm.value
       )
       .subscribe({

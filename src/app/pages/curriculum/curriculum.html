@@ -1,0 +1,131 @@
+<div class="curriculum-page">
+
+  <header class="page-header">
+
+    <a routerLink="/dashboard" class="back-link">
+      ← Back to Dashboard
+    </a>
+
+    <p class="eyebrow">LEVEL UP FINANCIAL LITERACY</p>
+
+    <h1>Curriculum</h1>
+
+    <p class="intro">
+      Financial literacy lessons and resources for Level Up facilitators.
+    </p>
+
+  </header>
+
+
+  <section class="facilitator-section">
+
+    <div>
+      <p class="eyebrow dark">FACILITATOR RESOURCE</p>
+
+      <h2>Facilitator Training Guide</h2>
+
+      <p>
+        Start here for guidance on teaching the Level Up
+        Financial Literacy Program.
+      </p>
+    </div>
+
+    <a
+      href="/curriculum/facilitator-training-guide.docx"
+      target="_blank"
+      class="resource-button">
+
+      Open Training Guide
+
+    </a>
+
+  </section>
+
+
+  <section class="lesson-section">
+
+    <div class="section-heading">
+
+      <p class="eyebrow dark">
+        PROGRAM CURRICULUM
+      </p>
+
+      <h2>Financial Literacy Classes</h2>
+
+      <p>
+        Three classes covering credit, investing,
+        and wealth building.
+      </p>
+
+    </div>
+
+
+    <div class="lesson-grid">
+
+      <article
+        class="lesson-card"
+        *ngFor="let lesson of lessons">
+
+        <div class="lesson-number">
+          {{ lesson.number }}
+        </div>
+
+        <div class="lesson-content">
+
+          <p class="class-label">
+            CLASS {{ lesson.number }}
+          </p>
+
+          <h3>
+            {{ lesson.title }}
+          </h3>
+
+          <p class="description">
+            {{ lesson.description }}
+          </p>
+
+
+          <div class="topics">
+
+            <span
+              *ngFor="let topic of lesson.topics">
+
+              {{ topic }}
+
+            </span>
+
+          </div>
+
+
+          <div class="lesson-actions">
+
+<a
+  [routerLink]="lesson.route"
+  class="primary-button">
+
+  Open Lesson
+
+</a>
+
+
+            <a
+              *ngIf="lesson.worksheetFile"
+              [href]="lesson.worksheetFile"
+              target="_blank"
+              class="secondary-button">
+
+              Student Worksheet
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</div>

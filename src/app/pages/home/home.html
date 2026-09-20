@@ -1,275 +1,560 @@
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" routerLink="/">
-      <div class="brand-mark">LU</div>
+<div class="site-shell">
 
-      <div class="brand-text">
-        <span class="brand-name">Level Up Life Movement</span>
-        <span class="brand-tagline">Mindset • Mentorship • Impact</span>
-      </div>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+  <header class="navbar">
+
+    <a routerLink="/" class="logo">
+      <img
+        src="/assets/images/level-up-logo.png"
+        alt="Level Up Life Movement"
+      />
     </a>
 
-    <nav class="main-nav">
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#pillars">Programs</a>
-      <a href="#mission">Mission</a>
+      <a href="#programs">Programs</a>
+      <a href="#impact">Impact</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="nav-actions">
-      <a routerLink="/login" class="btn btn-outline">Log In</a>
-      <a routerLink="/signup" class="btn btn-dark">Join Now</a>
+      <a routerLink="/login" class="login-button">
+        Log In
+      </a>
+
+      <a routerLink="/signup" class="join-button">
+        Join Now
+      </a>
     </div>
-  </div>
-</header>
 
-<main>
-  <section class="hero">
-    <div class="hero-overlay"></div>
+  </header>
 
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">LEVEL UP LIFE MOVEMENT</p>
 
-        <h1>
-          Your future starts
-          <span>with the next move.</span>
-        </h1>
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero" id="home">
 
-        <p class="hero-description">
-          Empowering individuals and communities through mentorship,
-          financial literacy, personal development, and real-world
-          opportunities.
-        </p>
+    <div class="hero-copy">
 
-        <div class="hero-actions">
-          <a routerLink="/signup" class="btn btn-light btn-large">
-            Join the Movement
-          </a>
+      <p class="eyebrow">
+        EMPOWER • EDUCATE • ELEVATE
+      </p>
 
-          <a href="#pillars" class="text-link">
-            Explore our programs
-            <span>→</span>
-          </a>
-        </div>
+      <h1>
+        A BRIGHTER<br />
+        FUTURE<br />
+        <span>STARTS HERE.</span>
+      </h1>
 
-        <div class="hero-stats">
-          <div>
-            <span>Mindset</span>
-          </div>
+      <p class="hero-description">
+        Level Up Life Movement is dedicated to empowering
+        young people through financial literacy, mentorship,
+        and personal development.
+      </p>
 
-          <div>
-            <span>Mentorship</span>
-          </div>
+      <div class="hero-actions">
 
-          <div>
-            <span>Impact</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <p class="card-kicker">LEVEL UP YOUR LIFE</p>
-
-        <h2>
-          Build confidence.
-          Create opportunity.
-          Move with purpose.
-        </h2>
-
-        <p>
-          We help participants develop the skills, mindset, knowledge,
-          and support needed to build a stronger future.
-        </p>
-
-        <a routerLink="/signup" class="card-link">
-          Create your account
-          <span>↗</span>
+        <a routerLink="/signup" class="primary-button">
+          Join Now
+          <span>→</span>
         </a>
+
+        <a routerLink="/login" class="outline-button">
+          Log In
+        </a>
+
       </div>
+
+
+      <div class="hero-features">
+
+        <div class="mini-feature">
+          <div class="mini-icon">↗</div>
+
+          <span>
+            Financial<br />
+            Literacy
+          </span>
+        </div>
+
+        <div class="mini-feature">
+          <div class="mini-icon">●●</div>
+
+          <span>
+            Mentorship<br />
+            & Guidance
+          </span>
+        </div>
+
+        <div class="mini-feature">
+          <div class="mini-icon">▥</div>
+
+          <span>
+            Real<br />
+            Opportunities
+          </span>
+        </div>
+
+      </div>
+
     </div>
+
+
+    <!-- HERO PHOTO -->
+    <div class="hero-image">
+
+      <img
+        src="/assets/images/level-up-art.png"
+        alt="Level Up Life Movement community member"
+      />
+
+      <div class="hero-script">
+        People.<br />
+        Programs.<br />
+        <span>Progress.</span>
+      </div>
+
+      <div class="paint-message">
+        INVEST<br />
+        IN PEOPLE
+      </div>
+
+    </div>
+
   </section>
 
-  <section class="intro" id="about">
-    <div class="container intro-grid">
-      <div>
-        <p class="section-label">WHO WE ARE</p>
 
-        <h2>
-          More than a program.
-          <span>A movement.</span>
-        </h2>
+  <!-- =========================
+       PROGRAM AREAS
+  ========================== -->
+  <section class="programs" id="programs">
+
+    <article class="program">
+
+      <div class="program-icon">
+        $
       </div>
 
-      <div class="intro-copy">
-        <p>
-          Level Up Life Movement is focused on helping people build stronger
-          habits, stronger financial awareness, stronger relationships, and
-          stronger futures.
-        </p>
+      <h3>Financial Literacy</h3>
 
-        <p>
-          Through mentorship, education, community engagement, and practical
-          life skills, we create environments where participants can grow,
-          learn, and take meaningful steps forward.
-        </p>
+      <p>
+        Real-world knowledge that helps young people
+        build financial confidence and prepare for the future.
+      </p>
+
+    </article>
+
+
+    <article class="program">
+
+      <div class="program-icon">
+        ◎
       </div>
-    </div>
+
+      <h3>Mentorship</h3>
+
+      <p>
+        Positive role models, meaningful relationships,
+        and guidance at every step.
+      </p>
+
+    </article>
+
+
+    <article class="program">
+
+      <div class="program-icon">
+        ↗
+      </div>
+
+      <h3>Personal Development</h3>
+
+      <p>
+        Building confidence, leadership, mindset,
+        and lifelong skills.
+      </p>
+
+    </article>
+
   </section>
 
-  <section class="pillars-section" id="pillars">
-    <div class="container">
-      <div class="section-heading">
+
+  <!-- =========================
+       MISSION
+  ========================== -->
+  <section class="mission" id="about">
+
+    <div class="mission-copy">
+
+      <p class="eyebrow white-eyebrow">
+        OUR MISSION
+      </p>
+
+      <h2>
+        MORE THAN<br />
+        A PROGRAM.<br />
+        <span>A MOVEMENT.</span>
+      </h2>
+
+      <p class="mission-description">
+        We believe in the potential of every young person.
+        Through education, mentorship, and community support,
+        we help create real opportunities and brighter futures.
+      </p>
+
+      <a href="#impact" class="light-button">
+        Learn More
+        <span>→</span>
+      </a>
+
+    </div>
+
+
+    <div class="mission-image">
+
+      <img
+        src="/assets/images/level-up-team.jfif"
+        alt="Level Up Life Movement team"
+      />
+
+      <div class="mission-script">
+        Community<br />
+        Creates<br />
+        <span>Change.</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       IMPACT
+  ========================== -->
+  <section class="impact" id="impact">
+
+    <div class="section-heading">
+
+      <p class="eyebrow">
+        REAL PEOPLE. REAL IMPACT.
+      </p>
+
+      <h2>
+        BUILDING STRONGER FUTURES
+      </h2>
+
+      <p>
+        Level Up Life Movement brings education,
+        mentorship, and opportunity directly into the community.
+      </p>
+
+    </div>
+
+
+    <div class="impact-grid">
+
+      <!-- CARD 1 -->
+      <article class="impact-card">
+
+        <div class="impact-photo">
+          <img
+            src="/assets/images/level-up-art.png"
+            alt="Level Up Life Movement"
+          />
+        </div>
+
+        <h3>Creative Expression</h3>
+
+        <p>
+          Creating opportunities to explore new perspectives.
+        </p>
+
+      </article>
+
+
+      <!-- CARD 2 -->
+      <article class="impact-card">
+
+        <div class="impact-photo">
+          <img
+            src="/assets/images/level-up-community.jpeg"
+            alt="Level Up community"
+          />
+        </div>
+
+        <h3>Stronger Communities</h3>
+
+        <p>
+          Investing in young people and the next generation.
+        </p>
+
+      </article>
+
+
+      <!-- CARD 3 -->
+      <article class="impact-card">
+
+        <div class="impact-photo">
+          <img
+            src="/assets/images/level-up-team.jfif"
+            alt="Level Up Life Movement team"
+          />
+        </div>
+
+        <h3>Mentorship in Action</h3>
+
+        <p>
+          Real people providing real guidance and support.
+        </p>
+
+      </article>
+
+
+      <!-- CARD 4 -->
+      <article class="impact-card graphic-card">
+
+        <div class="graphic">
+
+          <span>INVEST</span>
+          <span>LEARN</span>
+          <span>GROW</span>
+          <span>BELONG</span>
+
+        </div>
+
+        <h3>Lasting Opportunities</h3>
+
+        <p>
+          Knowledge and support that help build stronger futures.
+        </p>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PHOTO STORY
+  ========================== -->
+  <section class="story">
+
+    <div class="story-image">
+
+      <img
+        src="/assets/images/level-up-community.jpeg"
+        alt="Level Up Life Movement community"
+      />
+
+    </div>
+
+
+    <div class="story-copy">
+
+      <p class="eyebrow">
+        WHY LEVEL UP?
+      </p>
+
+      <h2>
+        CHANGE STARTS<br />
+        WITH <span>OPPORTUNITY.</span>
+      </h2>
+
+      <p>
+        Our work is centered around giving young people access
+        to knowledge, mentorship, and experiences that can help
+        change the direction of their future.
+      </p>
+
+      <div class="story-points">
+
         <div>
-          <p class="section-label">WHAT WE BUILD</p>
-          <h2>Three pillars. One direction.</h2>
+          <strong>01</strong>
+          <span>Build confidence</span>
         </div>
 
-        <p>
-          A practical approach to personal growth and long-term opportunity.
-        </p>
+        <div>
+          <strong>02</strong>
+          <span>Develop financial skills</span>
+        </div>
+
+        <div>
+          <strong>03</strong>
+          <span>Create stronger communities</span>
+        </div>
+
       </div>
 
-      <div class="pillar-grid">
-        <article class="pillar-card">
-          <div class="pillar-number">01</div>
-
-          <div class="pillar-icon">↗</div>
-
-          <h3>Change & Impact</h3>
-
-          <p>
-            Creating positive momentum that reaches beyond the individual
-            and strengthens families, neighborhoods, and communities.
-          </p>
-
-          <span class="pillar-line"></span>
-        </article>
-
-        <article class="pillar-card featured">
-          <div class="pillar-number">02</div>
-
-          <div class="pillar-icon">◎</div>
-
-          <h3>Mentorship</h3>
-
-          <p>
-            Connecting participants with guidance, accountability,
-            encouragement, and people invested in their growth.
-          </p>
-
-          <span class="pillar-line"></span>
-        </article>
-
-        <article class="pillar-card">
-          <div class="pillar-number">03</div>
-
-          <div class="pillar-icon">◆</div>
-
-          <h3>Mindset Mastery</h3>
-
-          <p>
-            Building discipline, confidence, financial awareness,
-            resilience, and the mindset needed to move forward.
-          </p>
-
-          <span class="pillar-line"></span>
-        </article>
-      </div>
     </div>
+
   </section>
 
-  <section class="mission" id="mission">
-    <div class="container mission-grid">
-      <div class="mission-box">
-        <p class="section-label light">OUR MISSION</p>
+
+  <!-- =========================
+       CTA
+  ========================== -->
+  <section class="movement-cta">
+
+    <div class="quote">
+
+      <div class="quote-line"></div>
+
+      <div>
 
         <h2>
-          Help people see a bigger future —
-          then give them tools to build it.
+          “When we invest in young
+          people, we invest in stronger
+          communities.”
         </h2>
-      </div>
 
-      <div class="mission-content">
         <p>
-          Personal growth becomes more powerful when opportunity,
-          mentorship, financial education, and community support work
-          together.
+          — LEVEL UP LIFE MOVEMENT
         </p>
 
-        <a routerLink="/signup" class="btn btn-light">
-          Get Started
+      </div>
+
+    </div>
+
+
+    <div class="cta-action">
+
+      <p class="eyebrow white-eyebrow">
+        READY TO GET INVOLVED?
+      </p>
+
+      <h3>
+        Be part of the movement.
+      </h3>
+
+      <p>
+        Join our community and help create opportunities
+        for stronger futures.
+      </p>
+
+      <div class="cta-buttons">
+
+        <a routerLink="/signup" class="light-button">
+          Join Now
         </a>
+
+        <a href="#about" class="dark-outline-button">
+          Learn More
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="journey">
-    <div class="container">
-      <div class="journey-heading">
-        <p class="section-label">YOUR NEXT STEP</p>
-        <h2>Start your Level Up journey.</h2>
-      </div>
 
-      <div class="journey-grid">
-        <div class="journey-step">
-          <span>1</span>
-          <h3>Create an account</h3>
-          <p>Join the platform and become part of the movement.</p>
-        </div>
+  <!-- =========================
+       NUMBERS
+  ========================== -->
+  <section class="numbers">
 
-        <div class="journey-step">
-          <span>2</span>
-          <h3>Access programs</h3>
-          <p>Explore resources, curriculum, mentorship, and opportunities.</p>
-        </div>
-
-        <div class="journey-step">
-          <span>3</span>
-          <h3>Build your future</h3>
-          <p>Turn knowledge and support into real progress.</p>
-        </div>
-      </div>
+    <div class="number-item">
+      <strong>100+</strong>
+      <span>Youth Impacted</span>
     </div>
+
+    <div class="number-item">
+      <strong>2</strong>
+      <span>Inner City Programs</span>
+    </div>
+
+    <div class="number-item">
+      <strong>3</strong>
+      <span>Core Focus Areas</span>
+    </div>
+
+    <div class="number-item">
+      <strong>1</strong>
+      <span>Stronger Future</span>
+    </div>
+
   </section>
 
+
+  <!-- =========================
+       FINAL CTA
+  ========================== -->
   <section class="final-cta">
-    <div class="container final-cta-inner">
-      <div>
-        <p class="section-label light">READY TO LEVEL UP?</p>
-        <h2>Make the next move count.</h2>
-      </div>
 
-      <div class="final-actions">
-        <a routerLink="/signup" class="btn btn-light btn-large">
-          Create Account
-        </a>
+    <img
+      src="/assets/images/level-up-logo.png"
+      alt="Level Up Life Movement"
+    />
 
-        <a routerLink="/login" class="btn btn-ghost btn-large">
-          Member Login
-        </a>
-      </div>
-    </div>
+    <p class="eyebrow">
+      CHANGE TODAY. STRONGER TOMORROWS.
+    </p>
+
+    <h2>
+      READY TO LEVEL UP?
+    </h2>
+
+    <p>
+      Join Level Up Life Movement and become part
+      of a community focused on building stronger futures.
+    </p>
+
+    <a routerLink="/signup" class="primary-button">
+      Join the Movement
+      <span>→</span>
+    </a>
+
   </section>
-</main>
 
-<footer id="contact">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">Level Up Life Movement</div>
-      <p>Mindset. Mentorship. Impact.</p>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer id="contact">
+
+    <div class="footer-logo">
+
+      <img
+        src="/assets/images/level-up-logo.png"
+        alt="Level Up Life Movement"
+      />
+
     </div>
+
 
     <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#pillars">Programs</a>
-      <a routerLink="/login">Log In</a>
-      <a routerLink="/signup">Join Now</a>
-    </div>
-  </div>
 
-  <div class="container footer-bottom">
-    <span>© 2026 Level Up Life Movement</span>
-    <span>Building stronger futures.</span>
-  </div>
-</footer>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#impact">Impact</a>
+
+      <a routerLink="/login">
+        Log In
+      </a>
+
+      <a routerLink="/signup">
+        Join Now
+      </a>
+
+    </div>
+
+
+    <p class="footer-message">
+      Change Today.<br />
+      Stronger Tomorrows.
+    </p>
+
+
+    <p class="copyright">
+      © 2026 Level Up Life Movement. All rights reserved.
+    </p>
+
+  </footer>
+
+</div>
