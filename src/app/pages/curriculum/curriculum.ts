@@ -66,4 +66,9 @@ lessons: CurriculumLesson[] = [
     route: '/curriculum/lesson/3'
   }
 ];
+
+playInvestmentGame(): void {
+  alert('GAME BUTTON CLICKED');
+  window.location.href = 'http://localhost:5031/game';
+}
 }

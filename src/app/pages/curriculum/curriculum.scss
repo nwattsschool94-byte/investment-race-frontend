@@ -1,0 +1,619 @@
+/* =========================================
+   LEVEL UP — CURRICULUM PAGE
+========================================= */
+
+:host {
+  display: block;
+  background: #f4f6f8;
+  min-height: 100vh;
+  color: #18201c;
+}
+
+.curriculum-page {
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.page-header {
+  position: relative;
+  overflow: hidden;
+
+  padding: 42px max(6%, 24px) 80px;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(65, 180, 110, 0.2),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #07140d 0%,
+      #10271a 55%,
+      #173d27 100%
+    );
+
+  color: white;
+}
+
+.page-header::after {
+  content: "$";
+  position: absolute;
+
+  right: 7%;
+  top: -70px;
+
+  font-size: 320px;
+  font-weight: 800;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  pointer-events: none;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 65px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.back-link:hover {
+  color: white;
+  transform: translateX(-3px);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+
+  color: #6ee79b;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+.eyebrow.dark {
+  color: #278b4e;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  max-width: 800px;
+
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.intro {
+  max-width: 600px;
+
+  margin-top: 22px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   FACILITATOR RESOURCE
+========================================= */
+
+.facilitator-section {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1180px;
+
+  margin: -35px auto 0;
+  padding: 35px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  background: white;
+
+  border: 1px solid #e2e7e4;
+  border-radius: 18px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.facilitator-section h2 {
+  margin: 4px 0 8px;
+
+  font-size: 26px;
+}
+
+.facilitator-section p:not(.eyebrow) {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #68736c;
+
+  line-height: 1.6;
+}
+
+.resource-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 0 24px;
+
+  border-radius: 10px;
+
+  background: #12291c;
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.resource-button:hover {
+  background: #1e7c45;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   LESSON SECTION
+========================================= */
+
+.lesson-section {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 90px 24px;
+}
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  margin: 6px 0 10px;
+
+  font-size: clamp(30px, 4vw, 42px);
+  letter-spacing: -1px;
+}
+
+.section-heading > p:last-child {
+  margin: 0;
+
+  color: #6a756e;
+
+  font-size: 17px;
+}
+
+
+/* =========================================
+   CLASS CARDS
+========================================= */
+
+.lesson-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.lesson-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 420px;
+
+  overflow: hidden;
+
+  background: white;
+
+  border: 1px solid #e0e6e2;
+  border-radius: 18px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.lesson-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #b6d6c1;
+
+  box-shadow:
+    0 18px 45px rgba(16, 54, 31, 0.1);
+}
+
+
+/* NUMBER BANNER */
+
+.lesson-number {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #10271a,
+      #1c5b36
+    );
+
+  color: white;
+
+  font-size: 46px;
+  font-weight: 800;
+}
+
+
+/* CARD CONTENT */
+
+.lesson-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+}
+
+.class-label {
+  margin: 0 0 9px;
+
+  color: #2e8c53;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.lesson-content h3 {
+  margin: 0;
+
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.description {
+  margin: 14px 0 20px;
+
+  color: #69736d;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* TOPIC PILLS */
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 25px;
+}
+
+.topics span {
+  padding: 6px 10px;
+
+  background: #edf7f0;
+
+  border: 1px solid #d9ecdf;
+  border-radius: 100px;
+
+  color: #286943;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* LESSON BUTTONS */
+
+.lesson-actions {
+  margin-top: auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 17px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  background: #163c27;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #25814a;
+}
+
+.secondary-button {
+  background: #f2f5f3;
+
+  border: 1px solid #dce3df;
+
+  color: #26342c;
+}
+
+.secondary-button:hover {
+  background: #e5ebe7;
+}
+
+
+/* =========================================
+   INVESTMENT RACE
+========================================= */
+
+.game-section {
+  max-width: 1180px;
+
+  margin: 0 auto 90px;
+  padding: 0 24px;
+}
+
+.game-content {
+  position: relative;
+  overflow: hidden;
+
+  padding: 55px;
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(69, 218, 125, 0.25),
+      transparent 32%
+    ),
+    linear-gradient(
+      120deg,
+      #07140d,
+      #143c25
+    );
+
+  color: white;
+}
+
+.game-content::after {
+  content: "↗";
+
+  position: absolute;
+
+  right: 50px;
+  top: 15px;
+
+  font-size: 190px;
+  font-weight: 700;
+
+  color: rgba(255, 255, 255, 0.035);
+
+  transform: rotate(-5deg);
+}
+
+.game-content h2 {
+  position: relative;
+  z-index: 1;
+
+  margin: 6px 0 12px;
+
+  font-size: clamp(32px, 5vw, 50px);
+
+  letter-spacing: -1.5px;
+}
+
+.game-description {
+  position: relative;
+  z-index: 1;
+
+  max-width: 620px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  line-height: 1.7;
+}
+
+.game-features {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 27px 0;
+}
+
+.game-features span {
+  padding: 9px 13px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 8px;
+
+  font-size: 13px;
+}
+
+.game-button {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+
+  padding: 0 25px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #64df91;
+  color: #092014;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.game-button:hover {
+  background: #83eca8;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .lesson-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .facilitator-section {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .page-header {
+    padding:
+      30px 20px
+      65px;
+  }
+
+  .back-link {
+    margin-bottom: 45px;
+  }
+
+  .page-header h1 {
+    letter-spacing: -2px;
+  }
+
+  .facilitator-section {
+    margin-left: 16px;
+    margin-right: 16px;
+
+    padding: 28px 24px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resource-button {
+    width: 100%;
+  }
+
+  .lesson-section {
+    padding:
+      70px 16px;
+  }
+
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-card {
+    min-height: 0;
+  }
+
+  .game-section {
+    padding: 0 16px;
+
+    margin-bottom: 60px;
+  }
+
+  .game-content {
+    padding: 36px 24px;
+  }
+
+  .game-features {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-button {
+    width: 100%;
+  }
+
+}
